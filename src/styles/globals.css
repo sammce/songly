@@ -1,8 +1,21 @@
 :root {
-  --bg-color: #222627;
-  --text-primary: #fafafa;
-  --primary: #3b83e2;
-  --highlight: #ff81a6;
+  --bg-color: #202227; /* rgb(32, 34, 39) */
+
+  --primary: #3b83e2; /* rgb(59, 131, 226) */
+  --primary-ghost: rgba(59, 131, 226, 0.15);
+
+  --highlight: #ff81a6; /* rgb(255, 129, 166) */
+  --highlight-ghost: rgba(255, 129, 166, 0.15);
+
+  --text-primary: #fafafa; /* rgb(250, 250, 250) */
+  --text-highlight: var(--bg-color);
+
+  --border-radius: 8px;
+
+  --shadow-primary: 2px 3px 20px -2px rgba(59, 131, 226, 0.7);
+  --shadow-primary-hover: 3px 5px 20px 0px rgba(59, 131, 226, 0.8);
+  --shadow-highlight: 2px 3px 20px -2px rgba(255, 129, 166, 0.7);
+  --shadow-highlight-hover: 3px 5px 20px 0px rgba(255, 129, 166, 0.8);
 }
 
 * {
@@ -21,6 +34,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-size: 16px;
 }
 
 a {
