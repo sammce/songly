@@ -24,15 +24,9 @@
   margin: 0;
 }
 
-body {
-  background: var(--bg-color);
-  color: var(--text-primary);
-  font-family: var(--inter-font);
-}
-
 html,
 body {
-  max-width: 100vw;
+  height: 100%;
   overflow-x: hidden;
   font-size: 16px;
 }
@@ -40,4 +34,38 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--inter-font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
