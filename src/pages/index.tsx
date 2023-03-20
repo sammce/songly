@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import classes from './index.module.css';
 import { Canvas } from '@react-three/fiber';
+import { RotatingMesh } from '@/components';
 
 export default function Home() {
   return (
@@ -18,10 +19,12 @@ export default function Home() {
         <div className={classes.hero}>
           <h1 className={classes.title}>Songly</h1>
           <Canvas>
-            <mesh>
+            <ambientLight intensity={0.1} />
+            <directionalLight color="red" position={[0, 0, 5]} />
+            <RotatingMesh x y>
               <boxGeometry />
               <meshStandardMaterial />
-            </mesh>
+            </RotatingMesh>
           </Canvas>
         </div>
       </main>

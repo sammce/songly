@@ -11,7 +11,7 @@
 
 .title {
   background: linear-gradient(90deg, #3b83e2 0%, #ff81a6 100%);
-  background-size: 40%;
+  background-size: 100%;
   background-clip: text;
   color: transparent;
   font-size: 6rem;
