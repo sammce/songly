@@ -1,12 +1,13 @@
 .container {
   max-width: 1200px;
-  width: 80%;
+  margin: auto;
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 400px;
 }
 
 .title {
@@ -14,5 +15,5 @@
   background-size: 100%;
   background-clip: text;
   color: transparent;
-  font-size: 6rem;
+  font-size: 8rem;
 }

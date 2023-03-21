@@ -11,7 +11,14 @@ const RotatingMesh: React.FC<RotationProps> = ({
   ...props
 }) => {
   const [freezeRotation, setFreezeRotation] = useState(false);
-  const rotation = useRotation({ x, y, z, frequency, freeze: freezeRotation });
+  const rotation = useRotation({
+    x,
+    y,
+    z,
+    frequency,
+    freeze: freezeRotation,
+    rotation: props.rotation,
+  });
 
   const handleOrbitStart = useCallback(() => setFreezeRotation(true), []);
   const handleOrbitEnd = useCallback(() => setFreezeRotation(false), []);
