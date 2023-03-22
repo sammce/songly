@@ -1,19 +1,20 @@
 import { useWiggle } from '@/hooks';
+import { MeshProps } from '@react-three/fiber';
 
 type Range = [number, number];
-type RangeWithSpeed = [number, number, number];
+type RangeWithDuration = [number, number, number];
 
-interface WiggleProps {
+interface WiggleProps extends MeshProps {
   children: React.ReactNode;
-  x?: Range | RangeWithSpeed;
-  y?: Range | RangeWithSpeed;
-  z?: Range | RangeWithSpeed;
+  x?: Range | RangeWithDuration;
+  y?: Range | RangeWithDuration;
+  z?: Range | RangeWithDuration;
 }
 
 interface MergedWiggleProps {
-  x: Range | RangeWithSpeed;
-  y: Range | RangeWithSpeed;
-  z: Range | RangeWithSpeed;
+  x: Range | RangeWithDuration;
+  y: Range | RangeWithDuration;
+  z: Range | RangeWithDuration;
 }
 
 const defaultProps: MergedWiggleProps = {
@@ -22,18 +23,18 @@ const defaultProps: MergedWiggleProps = {
   z: [0, 0, 1],
 };
 
-const normalise = (axis: Range | RangeWithSpeed) => {
+const normalise = (axis: Range | RangeWithDuration) => {
   let min: number;
   let max: number;
-  let speed = 1;
+  let duration = 1;
 
   if (axis.length === 3) {
-    [min, max, speed] = axis;
+    [min, max, duration] = axis;
   } else {
     [min, max] = axis;
   }
 
-  return { min, max, speed };
+  return { min, max, duration };
 };
 
 const WigglingMesh: React.FC<WiggleProps> = ({ children, ...props }) => {

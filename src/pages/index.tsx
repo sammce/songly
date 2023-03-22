@@ -30,12 +30,6 @@ export default function Home() {
               position: [0, 0, 75],
             }}
           >
-            {/* <ambientLight color="white" intensity={0.1} /> */}
-            {/* <directionalLight
-              color="#c4a664"
-              intensity={1}
-              position={[-5, 0, 7]}
-            /> */}
             <directionalLight
               color="#3b83e2"
               intensity={0.6}
@@ -47,7 +41,7 @@ export default function Home() {
               position={[5, 0, 5]}
             />
 
-            <WigglingMesh x={[-20, 20]}>
+            <WigglingMesh x={[-15, 15]} y={[-5, 5]} rotation={[-0.4, 0, 0.4]}>
               <group>
                 <MicrophoneModel />
               </group>
