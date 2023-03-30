@@ -4,8 +4,7 @@ import { MeshProps } from '@react-three/fiber';
 type Range = [number, number];
 type RangeWithDuration = [number, number, number];
 
-interface WiggleProps extends MeshProps {
-  children: React.ReactNode;
+export interface WigglingMeshProps extends React.PropsWithChildren<MeshProps> {
   x?: Range | RangeWithDuration;
   y?: Range | RangeWithDuration;
   z?: Range | RangeWithDuration;
@@ -37,7 +36,7 @@ const normalise = (axis: Range | RangeWithDuration) => {
   return { min, max, duration };
 };
 
-const WigglingMesh: React.FC<WiggleProps> = ({ children, ...props }) => {
+const WigglingMesh: React.FC<WigglingMeshProps> = ({ children, ...props }) => {
   const mergedProps = { ...defaultProps, ...props } as MergedWiggleProps;
   const [x, y, z] = Object.values(mergedProps).map(normalise);
 

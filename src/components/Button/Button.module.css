@@ -1,14 +1,15 @@
 /* Default button */
 .button {
   border-radius: var(--border-radius);
-  padding: 0.8rem 1.4rem;
+  padding: 0.6em 1.2rem;
   margin: 0;
   outline: 0;
   border: 0;
   transition: box-shadow 0.3s ease, transform 0.3s ease, color 0.3s ease,
     background 0.3s ease, outline 0.15s ease-out;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 
   --button-ghost: var(--primary-ghost);
   --button-color: var(--primary);
@@ -60,7 +61,7 @@
   color: var(--text-primary);
   box-shadow: none;
   border: 2px solid var(--button-color);
-  padding: calc(0.8rem - 1px) calc(1.4rem - 1px);
+  padding: 0.58rem 1.16rem;
 }
 
 .button.outline:hover,

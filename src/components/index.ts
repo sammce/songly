@@ -5,3 +5,4 @@ export { default as RotatingMesh } from './RotatingMesh';
 export { default as GuitarModel } from './GuitarModel';
 export { default as MicrophoneModel } from './MicrophoneModel';
 export { default as WigglingMesh } from './WigglingMesh';
+export { default as DesktopOnly } from './DesktopOnly';

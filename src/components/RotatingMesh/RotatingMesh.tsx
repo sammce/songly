@@ -1,6 +1,11 @@
-import useRotation, { RotationProps } from '@/hooks/useRotation';
+import useRotation, { UseRotationOptions } from '@/hooks/useRotation';
 import { useState, useCallback } from 'react';
 import { OrbitControls } from '@react-three/drei';
+import { MeshProps } from '@react-three/fiber';
+
+export type RotationProps = React.PropsWithChildren<
+  Omit<UseRotationOptions, 'freeze'>
+> & { noManualRotate?: boolean } & MeshProps;
 
 const RotatingMesh: React.FC<RotationProps> = ({
   children,
@@ -8,6 +13,7 @@ const RotatingMesh: React.FC<RotationProps> = ({
   y,
   z,
   frequency,
+  noManualRotate = false,
   ...props
 }) => {
   const [freezeRotation, setFreezeRotation] = useState(false);
@@ -28,6 +34,7 @@ const RotatingMesh: React.FC<RotationProps> = ({
       <OrbitControls
         enableZoom={false}
         enablePan={false}
+        enableRotate={!noManualRotate}
         onStart={handleOrbitStart}
         onEnd={handleOrbitEnd}
       />
