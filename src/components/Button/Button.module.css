@@ -69,6 +69,10 @@
   background: var(--button-ghost);
 }
 
+.button-outline:focus-visible {
+  outline: 2px solid var(--text-primary);
+}
+
 /* Ghost button */
 .button.ghost {
   background: transparent;
@@ -81,3 +85,7 @@
   background: var(--button-ghost);
 }
 /* End ghost button */
+
+button.outline.square {
+  padding: 0.6rem 0.8rem;
+}

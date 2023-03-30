@@ -5,12 +5,14 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   variant?: 'filled' | 'outline' | 'ghost';
   color?: 'primary' | 'highlight';
+  square?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'filled',
   color = 'primary',
+  square = false,
   className,
   ...props
 }) => {
@@ -20,6 +22,7 @@ const Button: React.FC<ButtonProps> = ({
     [classes.highlight]: color === 'highlight',
     [classes.outline]: variant === 'outline',
     [classes.ghost]: variant === 'ghost',
+    [classes.square]: square,
   });
 
   return (

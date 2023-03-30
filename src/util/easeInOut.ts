@@ -1,7 +1,7 @@
 import type { MergedRange } from '@/hooks/useWiggle';
 
-const MAX_SPEED = 0.15;
-const MIN_SPEED = 0.02;
+const MAX_SPEED = 0.02;
+const MIN_SPEED = 0.005;
 
 export default function easeInOut(pos: number, { min, max }: MergedRange) {
   const center = (max + min) / 2;

@@ -24,6 +24,12 @@
   margin: 0;
 }
 
+*:focus-visible {
+  border-radius: calc(var(--border-radius) - 4px);
+
+  outline: 2px solid var(--text-primary);
+}
+
 html,
 body {
   height: 100%;
@@ -37,7 +43,8 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
   text-decoration: underline;
 }
 
@@ -47,6 +54,7 @@ body {
   font-family: var(--inter-font);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
 
 img,
@@ -79,4 +87,9 @@ h6 {
   background: linear-gradient(90deg, #3b83e2 0%, #ff81a6 100%);
   background-clip: text;
   color: transparent;
+}
+
+hr {
+  width: 100%;
+  border-color: rgb(17, 17, 22);
 }

@@ -6,9 +6,13 @@ import {
   GuitarModel,
   MicrophoneModel,
   Button,
-  DesktopOnly,
+  WidescreenOnly,
+  WigglingMesh,
 } from '@/components';
 import MusicNote from '@/components/MusicNote';
+
+const upperWiggle = 4;
+const lowerWiggle = 2;
 
 export default function Home() {
   return (
@@ -24,7 +28,7 @@ export default function Home() {
       </Head>
       <main className={classes.container}>
         <div className={classes.hero}>
-          <DesktopOnly>
+          <WidescreenOnly>
             <Canvas
               camera={{
                 fov: 60,
@@ -44,21 +48,26 @@ export default function Home() {
                 position={[5, 0, 5]}
               />
 
-              <MusicNote note="clef" radius={15} axis={0.5} speed={0.9} />
+              <WigglingMesh
+                x={[-lowerWiggle, lowerWiggle]}
+                y={[-upperWiggle, upperWiggle]}
+              >
+                <MusicNote note="clef" radius={15} axis={0.5} speed={0.9} />
 
-              <MusicNote
-                note="quaver"
-                radius={20}
-                axis={0.8}
-                speed={0.7}
-                direction="counter-clockwise"
-              />
+                <MusicNote
+                  note="quaver"
+                  radius={20}
+                  axis={0.8}
+                  speed={0.7}
+                  direction="counter-clockwise"
+                />
 
-              <RotatingMesh rotation={[-0.4, 0, 0.4]}>
-                <MicrophoneModel />
-              </RotatingMesh>
+                <RotatingMesh rotation={[-0.4, 0, 0.4]}>
+                  <MicrophoneModel />
+                </RotatingMesh>
+              </WigglingMesh>
             </Canvas>
-          </DesktopOnly>
+          </WidescreenOnly>
 
           <div className={classes.info}>
             <h1 className="gradient-text">Songly</h1>
@@ -78,7 +87,7 @@ export default function Home() {
             </div>
           </div>
 
-          <DesktopOnly>
+          <WidescreenOnly>
             <Canvas
               camera={{
                 fov: 60,
@@ -104,32 +113,39 @@ export default function Home() {
                 position={[5, 0, 5]}
               />
 
-              <MusicNote
-                note="beamed"
-                radius={15}
-                axis={0.5}
-                direction="counter-clockwise"
-                scale={0.7}
-                center={[5, 0, 0]}
-              />
-
-              <MusicNote
-                note="semiquaver"
-                radius={12}
-                scale={0.7}
-                center={[5, 0, 0]}
-              />
-
-              <RotatingMesh
-                position={[0, -17, 0]}
-                scale={[0.5, 0.5, 0.5]}
-                rotation={[-0.6, -0.8, -0.5]}
+              <WigglingMesh
+                x={[-upperWiggle, upperWiggle]}
+                y={[-lowerWiggle, lowerWiggle]}
               >
-                <GuitarModel />
-              </RotatingMesh>
+                <MusicNote
+                  note="beamed"
+                  radius={15}
+                  axis={0.5}
+                  direction="counter-clockwise"
+                  scale={0.7}
+                  center={[5, 0, 0]}
+                />
+
+                <MusicNote
+                  note="semiquaver"
+                  radius={12}
+                  scale={0.7}
+                  center={[5, 0, 0]}
+                />
+
+                <RotatingMesh
+                  position={[0, -17, 0]}
+                  scale={[0.5, 0.5, 0.5]}
+                  rotation={[-0.6, -0.8, -0.5]}
+                >
+                  <GuitarModel />
+                </RotatingMesh>
+              </WigglingMesh>
             </Canvas>
-          </DesktopOnly>
+          </WidescreenOnly>
         </div>
+
+        <hr style={{ margin: '4rem 0' }} />
       </main>
     </>
   );
