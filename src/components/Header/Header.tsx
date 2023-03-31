@@ -3,11 +3,13 @@ import Button from '../Button';
 import classes from './Header.module.css';
 import Link, { LinkProps } from 'next/link';
 import { cn } from '@/util';
+import { useRouter } from 'next/router';
 
 import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
 import WidescreenOnly from '../WidescreenOnly';
 import { useWidescreen } from '@/hooks';
 import Drawer from '../Drawer';
+import { cnIf } from '@/util/cn';
 
 const Header = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -21,10 +23,19 @@ const Header = () => {
 
   const Linkable: React.FC<React.PropsWithChildren<LinkProps>> = ({
     children,
+    href,
     ...props
   }) => {
+    const router = useRouter();
+    const className = cnIf({ [classes.active]: router.pathname === href });
+
     return (
-      <Link onClick={drawerFunctions.close} {...props}>
+      <Link
+        onClick={drawerFunctions.close}
+        href={href}
+        className={className}
+        {...props}
+      >
         {children}
       </Link>
     );

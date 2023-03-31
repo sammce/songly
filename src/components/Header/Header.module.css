@@ -37,3 +37,7 @@
   align-items: center;
   gap: 1rem;
 }
+
+.active {
+  color: var(--text-primary);
+}
