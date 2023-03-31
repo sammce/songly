@@ -1,19 +1,8 @@
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
-
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 400px;
-}
-
-@media only screen and (max-width: 768px) {
-  .hero {
-    justify-content: center;
-  }
 }
 
 .info h1 {
@@ -36,4 +25,42 @@
 .info span {
   font-weight: bold;
   color: var(--highlight);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.features > h1 {
+  font-size: 4rem;
+}
+
+.rhetorical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.rhetorical > h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 800;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero {
+    justify-content: center;
+  }
+
+  .features > div {
+    margin: 0;
+  }
+
+  .features {
+    gap: 2rem;
+  }
 }

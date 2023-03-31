@@ -26,25 +26,33 @@ const Header = () => {
           <Link href="/about">About</Link>
           <Link href="/support">Support</Link>
         </div>
-        <Button variant="outline">Download</Button>
+        <Link href="/download">
+          <Button variant="outline">Download</Button>
+        </Link>
       </>
     );
   } else {
     navContent = (
       <Drawer onClose={drawerFunctions.close} open={drawerOpen}>
-        <div className={cn(classes.nav, classes.vertical)}>
+        <nav className={cn(classes.nav, classes.vertical)}>
           <Link href="/about">About</Link>
           <Link href="/support">Support</Link>
-        </div>
+        </nav>
+
         <hr />
-        <Button style={{ width: '100%', marginTop: '0.5rem' }}>Download</Button>
+
+        <Link href="/download">
+          <Button style={{ width: '100%', marginTop: '0.5rem' }}>
+            Download
+          </Button>
+        </Link>
       </Drawer>
     );
   }
 
   return (
     <>
-      <div className={classes.wrapper}>
+      <header className={classes.wrapper}>
         <WidescreenOnly inverted>
           <Hamburger drawerOpen={drawerOpen} onClick={drawerFunctions.toggle} />
         </WidescreenOnly>
@@ -52,7 +60,7 @@ const Header = () => {
           <h1 className={cn(classes.brand, 'gradient-text')}>Songly</h1>
         </Link>
         {navContent}
-      </div>
+      </header>
       <div className={classes.tabbar}></div>
     </>
   );

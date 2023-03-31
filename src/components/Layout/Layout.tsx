@@ -1,13 +1,12 @@
-import { Header } from '@/components';
-import { useWidescreen } from '@/hooks';
+import { Header, Footer } from '@/components';
+import classes from './Layout.module.css';
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const isDesktop = useWidescreen();
-
   return (
     <>
       <Header />
-      {children}
+      <div className={classes.main}>{children}</div>
+      <Footer />
     </>
   );
 };

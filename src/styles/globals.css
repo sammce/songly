@@ -1,5 +1,6 @@
 :root {
-  --bg-color: #202227; /* rgb(32, 34, 39) */
+  --background: #202227; /* rgb(32, 34, 39) */
+  --background-light: #2a2f37; /* rgb(42, 47, 55) */
 
   --primary: #3b83e2; /* rgb(59, 131, 226) */
   --primary-ghost: rgba(59, 131, 226, 0.15);
@@ -8,7 +9,7 @@
   --highlight-ghost: rgba(255, 129, 166, 0.15);
 
   --text-primary: #fafafa; /* rgb(250, 250, 250) */
-  --text-highlight: var(--bg-color);
+  --text-highlight: var(--background);
 
   --border-radius: 8px;
 
@@ -32,7 +33,7 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   overflow-x: hidden;
   font-size: 16px;
 }
@@ -49,7 +50,7 @@ a:focus-visible {
 }
 
 body {
-  background: var(--bg-color);
+  background: var(--background);
   color: var(--text-primary);
   font-family: var(--inter-font);
   line-height: 1.5;
@@ -81,6 +82,11 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
 }
 
 .gradient-text {

@@ -1,0 +1,26 @@
+.feature {
+  border-radius: var(--border-radius);
+  background-color: var(--background-light);
+  padding: 2rem;
+  max-width: 420px;
+}
+
+.floatLeft {
+  margin-left: -40%;
+  border-left: 10px solid var(--highlight);
+}
+
+.floatRight {
+  margin-right: -40%;
+  border-right: 10px solid var(--highlight);
+}
+
+.lift {
+  margin-top: -80px;
+}
+
+@media only screen and (max-width: 768px) {
+  .lift {
+    margin: 0;
+  }
+}

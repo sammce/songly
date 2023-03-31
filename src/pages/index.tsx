@@ -8,8 +8,11 @@ import {
   Button,
   WidescreenOnly,
   WigglingMesh,
+  Feature,
 } from '@/components';
 import MusicNote from '@/components/MusicNote';
+import Link from 'next/link';
+import { cn } from '@/util';
 
 const upperWiggle = 4;
 const lowerWiggle = 2;
@@ -26,7 +29,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={classes.container}>
+      <main className="container">
         <div className={classes.hero}>
           <WidescreenOnly>
             <Canvas
@@ -81,9 +84,11 @@ export default function Home() {
               <span>Listen</span> to new music curated for you.
             </p>
             <div>
-              <Button style={{ width: '100%' }}>
-                Start your music journey
-              </Button>
+              <Link href="/download" style={{ width: '100%' }}>
+                <Button style={{ width: '100%' }}>
+                  Start your music journey
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -146,6 +151,52 @@ export default function Home() {
         </div>
 
         <hr style={{ margin: '4rem 0' }} />
+
+        <div className={classes.features}>
+          <h1>Features</h1>
+          <br />
+          <Feature float="left">
+            <h1>Track your taste</h1>
+            <br />
+            <p>
+              Rate songs, albums and artists to build a profile of your musical
+              likes and dislikes. Our state of the art AI powered
+              recommendations will find the perfect music for you.
+            </p>
+          </Feature>
+
+          <Feature float="right" lift>
+            <h1>Follow your friends</h1>
+            <br />
+            <p>
+              Keep up to date with what your friends are listening to, send them
+              music you find and show off your broad palette. You can even find
+              new friends with similar tastes to yours.
+            </p>
+          </Feature>
+
+          <Feature float="left" lift>
+            <h1>Host listening parties</h1>
+            <br />
+            <p>
+              Go live to your followers and listen to music together. You can
+              post polls, receive music suggestions and chat with your friends
+              all at the same time
+            </p>
+          </Feature>
+        </div>
+
+        <hr />
+        <br />
+
+        <div className={classes.rhetorical}>
+          <h1 className="gradient-text">What are you waiting for?</h1>
+          <Link href="/download">
+            <Button style={{ padding: '1rem 2rem' }}>
+              Download Songly now
+            </Button>
+          </Link>
+        </div>
       </main>
     </>
   );

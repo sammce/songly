@@ -8,3 +8,5 @@ export { default as WigglingMesh } from './WigglingMesh';
 export { default as WidescreenOnly } from './WidescreenOnly';
 export { default as Layout } from './Layout';
 export { default as Drawer } from './Drawer';
+export { default as Feature } from './Feature';
+export { default as Footer } from './Footer';

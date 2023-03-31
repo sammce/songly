@@ -3,7 +3,7 @@
   height: 100%;
   transform: translateX(-300px);
   transition: transform 0.3s ease-out;
-  background-color: var(--bg-color);
+  background-color: var(--background);
 
   display: flex;
   padding: 1rem;
@@ -33,7 +33,6 @@
 }
 
 .backdrop.open {
-  z-index: 1;
   opacity: 1;
 }
 
