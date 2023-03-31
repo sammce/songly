@@ -1,5 +1,17 @@
 This is the website portion of the CA115 (DIME) project 2023 for Group R.
 
+The CSS code can be found in a few places:
+- `src/styles/globals.css`
+- `src/components/<Component Name>/<>.css`
+- `src/pages/<Path>/<>.css`
+
+The HTML code can be found in `.tsx` files, such as:
+- `src/components/<Component Name>/<>.tsx`
+- `pages/<Path>/<>.tsx`
+
+This project uses React, NextJS and TypeScript. If you have any questions, feel free
+to email me at `sam.mcelligott3@mail.dcu.ie` and I will clarify any queries.
+
 # Copyright
 See this repo's [LICENSE](https://github.com/sammce/ca115-website/blob/main/LICENSE).
 
