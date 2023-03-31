@@ -65,11 +65,14 @@
 }
 
 .button.outline:hover,
-.button.outline:focus-visible {
+.button.outline:focus-visible,
+.button.ghost:hover,
+.button.ghost:focus-visible {
   background: var(--button-ghost);
 }
 
-.button-outline:focus-visible {
+.button.outline:focus-visible,
+.button.ghost:focus-visible {
   outline: 2px solid var(--text-primary);
 }
 
@@ -80,12 +83,8 @@
   box-shadow: none;
 }
 
-.button.ghost:hover,
-.button.ghost:focus-visible {
-  background: var(--button-ghost);
-}
 /* End ghost button */
 
-button.outline.square {
+.button.square {
   padding: 0.6rem 0.8rem;
 }

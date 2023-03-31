@@ -1,5 +1,13 @@
+import Head from 'next/head';
+
 const DownloadPage = () => {
-  return null;
+  return (
+    <>
+      <Head>
+        <title>Download Songly</title>
+      </Head>
+    </>
+  );
 };
 
 export default DownloadPage;

@@ -6,10 +6,8 @@ const Footer = () => {
     <div className={classes.filler}>
       <footer className={classes.footer}>
         <p>
-          © {year} Songly - Made with{' '}
-          <a target="_blank" href="https://react.dev/">
-            React
-          </a>
+          © {year} <span className="gradient-text">Songly</span> <br />
+          CA115 Group R
         </p>
       </footer>
     </div>

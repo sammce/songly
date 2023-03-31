@@ -26,14 +26,15 @@
   position: fixed;
   right: 0;
   top: 80px;
-  z-index: 1;
-
+  z-index: -3;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-out;
 }
 
 .backdrop.open {
   opacity: 1;
+  visibility: visible;
 }
 
 .drawer.open {

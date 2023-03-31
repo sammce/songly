@@ -12,7 +12,6 @@ import {
 } from '@/components';
 import MusicNote from '@/components/MusicNote';
 import Link from 'next/link';
-import { cn } from '@/util';
 
 const upperWiggle = 4;
 const lowerWiggle = 2;
@@ -84,7 +83,7 @@ export default function Home() {
               <span>Listen</span> to new music curated for you.
             </p>
             <div>
-              <Link href="/download" style={{ width: '100%' }}>
+              <Link legacyBehavior href="/download" style={{ width: '100%' }}>
                 <Button style={{ width: '100%' }}>
                   Start your music journey
                 </Button>
@@ -191,7 +190,7 @@ export default function Home() {
 
         <div className={classes.rhetorical}>
           <h1 className="gradient-text">What are you waiting for?</h1>
-          <Link href="/download">
+          <Link legacyBehavior href="/download">
             <Button style={{ padding: '1rem 2rem' }}>
               Download Songly now
             </Button>

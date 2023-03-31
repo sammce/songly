@@ -18,16 +18,24 @@ const Header = () => {
     open: () => setDrawerOpen(true),
     close: () => setDrawerOpen(false),
   };
+
   let navContent: React.ReactNode = null;
+
   if (isWidescreen) {
     navContent = (
       <>
         <div className={classes.nav}>
-          <Link href="/about">About</Link>
-          <Link href="/support">Support</Link>
+          <Link onClick={drawerFunctions.close} href="/premium">
+            Songly premium
+          </Link>
+          <Link onClick={drawerFunctions.close} href="/support">
+            Support
+          </Link>
         </div>
-        <Link href="/download">
-          <Button variant="outline">Download</Button>
+        <Link legacyBehavior href="/download">
+          <Button onClick={drawerFunctions.close} variant="outline">
+            Download
+          </Button>
         </Link>
       </>
     );
@@ -35,14 +43,21 @@ const Header = () => {
     navContent = (
       <Drawer onClose={drawerFunctions.close} open={drawerOpen}>
         <nav className={cn(classes.nav, classes.vertical)}>
-          <Link href="/about">About</Link>
-          <Link href="/support">Support</Link>
+          <Link onClick={drawerFunctions.close} href="/premium">
+            Get Songly premium
+          </Link>
+          <Link onClick={drawerFunctions.close} href="/support">
+            Support
+          </Link>
         </nav>
 
         <hr />
 
-        <Link href="/download">
-          <Button style={{ width: '100%', marginTop: '0.5rem' }}>
+        <Link legacyBehavior href="/download">
+          <Button
+            onClick={drawerFunctions.close}
+            style={{ width: '100%', marginTop: '0.5rem' }}
+          >
             Download
           </Button>
         </Link>
