@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: calc(100vh - 80px);
-  padding: 4rem 0;
+  padding: 4rem 1rem;
 }
 
 .main hr {

@@ -8,6 +8,7 @@
 .info h1 {
   font-size: 8rem;
   font-weight: 800;
+  text-align: center;
 }
 
 .info > div {
@@ -56,10 +57,21 @@
     justify-content: center;
   }
 
+  .info h1 {
+    font-size: 6rem;
+  }
+
+  .info p {
+    font-size: 1.2rem;
+  }
+
   .features > div {
     margin: 0;
   }
 
+  .rhetorical > h1 {
+    font-size: 3rem;
+  }
   .features {
     gap: 2rem;
   }
