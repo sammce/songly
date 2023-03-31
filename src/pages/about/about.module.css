@@ -1,0 +1,43 @@
+.main {
+  min-height: calc(100vh - 80px);
+  max-width: 700px;
+  margin: auto;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+}
+
+.paragraph > span {
+  color: var(--highlight);
+  display: inline;
+}
+
+.image {
+  border-radius: 20px;
+  float: right;
+
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .heading {
+    font-size: 3rem;
+  }
+
+  .image {
+    float: none;
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+}

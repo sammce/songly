@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../Button';
 import classes from './Header.module.css';
-import Link from 'next/link';
+import Link, { LinkProps } from 'next/link';
 import { cn } from '@/util';
 
 import { RxHamburgerMenu, RxCross2 } from 'react-icons/rx';
@@ -19,18 +19,26 @@ const Header = () => {
     close: () => setDrawerOpen(false),
   };
 
+  const Linkable: React.FC<React.PropsWithChildren<LinkProps>> = ({
+    children,
+    ...props
+  }) => {
+    return (
+      <Link onClick={drawerFunctions.close} {...props}>
+        {children}
+      </Link>
+    );
+  };
+
   let navContent: React.ReactNode = null;
 
   if (isWidescreen) {
     navContent = (
       <>
         <div className={classes.nav}>
-          <Link onClick={drawerFunctions.close} href="/premium">
-            Songly premium
-          </Link>
-          <Link onClick={drawerFunctions.close} href="/support">
-            Support
-          </Link>
+          <Linkable href="/premium">Songly premium</Linkable>
+          <Linkable href="/about">About</Linkable>
+          <Linkable href="/support">Support</Linkable>
         </div>
         <Link legacyBehavior href="/download">
           <Button onClick={drawerFunctions.close} variant="outline">
@@ -43,12 +51,9 @@ const Header = () => {
     navContent = (
       <Drawer onClose={drawerFunctions.close} open={drawerOpen}>
         <nav className={cn(classes.nav, classes.vertical)}>
-          <Link onClick={drawerFunctions.close} href="/premium">
-            Get Songly premium
-          </Link>
-          <Link onClick={drawerFunctions.close} href="/support">
-            Support
-          </Link>
+          <Linkable href="/premium">Get Songly premium</Linkable>
+          <Linkable href="/about">About</Linkable>
+          <Linkable href="/support">Support</Linkable>
         </nav>
 
         <hr />

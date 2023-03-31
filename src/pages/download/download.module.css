@@ -1,0 +1,32 @@
+.main {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.main > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.iconButton {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  transform: translateY(-2px);
+}
+
+.googleWrapper {
+  background-color: var(--text-primary);
+  border-radius: var(--border-radius);
+  padding: 0.2rem;
+}

@@ -6,7 +6,7 @@ const Footer = () => {
     <div className={classes.filler}>
       <footer className={classes.footer}>
         <p>
-          © {year} <span className="gradient-text">Songly</span> <br />
+          © <span className="gradient-text">Songly</span> {year} <br />
           CA115 Group R
         </p>
       </footer>
